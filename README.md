@@ -90,16 +90,16 @@ Several high-growth families show significant margin erosion:
 ## 💡 Strategic Recommendations
 
 **1. Reduce concentration risk**
-Develop complementary high-margin product lines (e-liquid, stationery, gifts) to reduce dependency on tobacco and lottery
+- Develop complementary high-margin product lines (e-liquid, stationery, gifts) to reduce dependency on tobacco and lottery
 
 **2. Protect margin on fast-growing families**
-Flowers and resins CBD and e-cigarette refills are experiencing rapid growth, but margins are shrinking: a new pricing strategy, renegotiation with suppliers or the entry of new suppliers are necessary
+- Flowers and resins CBD and e-cigarette refills are experiencing rapid growth, but margins are shrinking: a new pricing strategy, renegotiation with suppliers or the entry of new suppliers are necessary
 
 **3. Leverage seasonality**
-Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks
+- Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks
 
 **4. Monitoring of high-margin families in decline**
-The e-cigarette market (-29.1%) is in structural decline, but with some growth in refills (+78,73%)
+- The e-cigarette market (-29.1%) is in structural decline, but with some growth in refills (+78,73%)
 
 ---
 
