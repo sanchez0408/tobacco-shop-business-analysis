@@ -18,7 +18,7 @@
 
 This project is a complete business analysis of a real French tobacco shop, comparing fiscal years **2024 and 2025** across **41 product families** and **7 business segments**. It was built as part of a data analytics portfolio to demonstrate end-to-end analytical skills — from raw data to actionable business insights.
 
-**Business context:** The shop operates in a regulated environment (tobacco, lottery) with ancillary growth segments (vape, CBD, services). The challenge is to identify which product families drive profitability, where margin is eroding despite revenue growth, and how to reduce concentration risk.
+**Business context:** The shop operates in a regulated environment (tobacco, lottery, services) with ancillary growth segments (vape, CBD). The challenge is to identify which product families drive profitability, where margin is eroding despite revenue growth, and how to reduce concentration risk.
 
 ---
 
@@ -90,16 +90,16 @@ Several high-growth families show significant margin erosion:
 ## 💡 Strategic Recommendations
 
 **1. Reduce concentration risk**
-Develop complementary high-margin product lines (e-liquid, stationery, gifts) to reduce dependency on tobacco and lottery.
+Develop complementary high-margin product lines (e-liquid, stationery, gifts) to reduce dependency on tobacco and lottery
 
 **2. Protect margin on fast-growing families**
-CBD, nicotine pouches and e-cig refills are growing fast but losing margin — pricing strategy or supplier renegotiation needed.
+Flowers and resins CBD and e-cigarette refills are experiencing rapid growth, but margins are shrinking: a new pricing strategy, renegotiation with suppliers or the entry of new suppliers are necessary
 
 **3. Leverage seasonality**
-Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks.
+Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks
 
-**4. Monitor declining segments**
-E-cigarettes (−29.1%) and e-stamps (−19.9%) are in structural decline — assess whether to reduce shelf space.
+**4. Monitor declining families**
+E-cigarettes (−29.1%) is in structural decline — 
 
 ---
 
@@ -138,7 +138,7 @@ Transitioning into data analytics with a background in management and operations
 
 # 🏪 Análisis de Rendimiento de Negocio 2024 → 2025
 
-> **Dashboard interactivo** que analiza el chiffre d'affaires, el margen, la estacionalidad y la segmentación de familias de productos de un estanco con actividades complementarias (CBD, vape, lotería, prensa, servicios).
+> **Dashboard interactivo** que analiza el CA, el margen, la estacionalidad y la segmentación de familias de productos de un estanco con actividades complementarias (CBD, vape, lotería, prensa, servicios).
 
 ---
 
@@ -177,7 +177,7 @@ Datos de ventas extraídos del sistema de punto de venta, organizados por famili
 - **Tasa de margen ligeramente a la baja** al 9,04% vs 9,33%
 - **5 familias de 41 generan el 80,6% del CA total** — riesgo de concentración elevado
 - **Julio** es el mes más fuerte con el 11,60% del CA anual
-- Familias con fuerte crecimiento pero presión de margen: CBD flores y resinas (+126,4%, −12,77 pt), Sobres de nicotina (+90,2%, −7,72 pt)
+- Familias con fuerte crecimiento pero presión de margen: CBD flores y resinas (+126,4%, −12,77 pt), Recarga cigarillos elec (+78,7%, −6,60 pt)
 
 ---
 
