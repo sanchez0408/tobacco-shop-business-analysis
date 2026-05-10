@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Business 2024-2025</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0EDED;color:#1a1a18;font-size:15px;line-height:1.6}
+.container{max-width:960px;margin:0 auto;padding:2rem 1.5rem}
+header{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:0.5px solid #ccc}
+header h1{font-size:22px;font-weight:500;margin-bottom:4px}
+header p{font-size:13px;color:#000}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.5rem}
+.kpi{background:#fff;border-radius:8px;padding:0.85rem 1rem}
+.kpi-label{font-size:12px;color:#000000;margin-bottom:4px}
+.kpi-val{font-size:22px;font-weight:500}
+.kpi-sub{font-size:12px;margin-top:2px}
+.pos{color:#1D9E75}.neg{color:#D85A30}
+.db-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:0.5px solid #ddd}
+.db-tab{padding:6px 14px;font-size:13px;border:0.5px solid #ccc;border-radius:8px;cursor:pointer;background:transparent;color:#000;transition:all 0.15s}
+.db-tab:hover{background:#ffffff}
+.db-tab.active{background:#ffffff;color:#000;border-color:#615D5D;font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.section{display:none}.section.active{display:block}
+.chart-wrap{position:relative;width:100%}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:1rem}
+.card{background:#fff;border:0.5px solid #ddd;border-radius:12px;padding:1rem 1.25rem}
+.card-title{font-size:13px;font-weight:500;color:#000;margin-bottom:1rem}
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:12px;color:#000}
+.leg-dot{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:4px}
+.risk-bar-wrap{margin-bottom:8px}
+.risk-label{display:flex;justify-content:space-between;font-size:12px;color:#666;margin-bottom:3px}
+.risk-bar{height:8px;border-radius:4px;background:#eee}
+.risk-fill{height:100%;border-radius:4px}
+table.seg{width:100%;border-collapse:collapse;font-size:13px}
+table.seg th{text-align:left;padding:8px 10px;color:#000;border-bottom:0.5px solid #ddd;font-weight:500}
+table.seg td{padding:8px 10px;border-bottom:0.5px solid #050505}
+.badge{font-size:11px;padding:2px 8px;border-radius:6px;display:inline-block}
+.badge-{background:#EAF3DE;color:#4fa20b}
+.badge-star{background:#EAF3DE;color:#4fa20b}
+.badge-warn{background:#FAEEDA;color:#a05d0a}
+.badge-risk{background:#FCEBEB;color:#b81313}
+.badge-ok{background:#E1F5EE;color:#0F6E56}
+.note{font-size:12px;color:#000;margin-top:10px;padding:8px 12px;background:#fff;border-radius:6px;border-left:3px solid #3266ad}
+.alert{margin-top:8px;font-size:12px;color:#000;background:#e75c5c;padding:6px 10px;border-radius:6px}
+.leg-seg{margin-top:1rem;display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#666}
+footer{margin-top:3rem;padding-top:1rem;border-top:0.5px solid #ddd;font-size:12px;color:#999}
+@media(max-width:600px){.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Analyse de performance business 2024 → 2025</h1>
+  <p>Bureau de tabac &amp; activités annexes</p>
+</header>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="kpi-label">CA 2025</div><div class="kpi-val">1,31 M€</div><div class="kpi-sub pos">+24% vs 2024</div></div>
+  <div class="kpi"><div class="kpi-label">Marge brute 2025</div><div class="kpi-val">118,5 k€</div><div class="kpi-sub pos">+20,1% vs 2024</div></div>
+  <div class="kpi"><div class="kpi-label">Taux de marge</div><div class="kpi-val">9,04%</div><div class="kpi-sub neg">−0,29 pt vs 2024</div></div>
+  <div class="kpi"><div class="kpi-label">Fréquentation</div><div class="kpi-val">104955</div><div class="kpi-sub pos">+20,87% vs 2024</div></div>
+  <div class="kpi"><div class="kpi-label">Panier moyen</div><div class="kpi-val">12,49€</div><div class="kpi-sub pos">+2,55% vs 2024</div></div>
+</div>
+
+<div class="card" style="margin-bottom:1rem">
+  <div class="card-title">INSIGHTS CLES</div>
+  <ul style="font-size:13px; color:#000; padding-left:18px; line-height:1.6">
+    <li>Forte croissance +24% principalement portée par le tabac et la FDJ</li>
+    <li>Forte concentration -> risque élevé : 5 familles génèrent 80,6% du CA</li>
+    <li>Marge en légère baisse -0,29% malgré la croissance</li>
+  </ul>
+</div>
+
+<div class="db-nav">
+  <button class="db-tab active" onclick="showTab('vue-generale',this)">Vue générale</button>
+  <button class="db-tab" onclick="showTab('segments',this)">Vue segment</button>
+  <button class="db-tab" onclick="showTab('familles',this)">Vue famille</button>
+  <button class="db-tab" onclick="showTab('matrice',this)">Matrice CA × Marge</button>
+  <button class="db-tab" onclick="showTab('top-flop',this)">Top / Flop</button>
+  <button class="db-tab" onclick="showTab('contribution',this)">Contribution</button>
+  <button class="db-tab" onclick="showTab('saisonnalite',this)">Saisonnalité</button>
+  <button class="db-tab" onclick="showTab('recommandations',this)">Recommandations</button>
+</div>
+
+<!-- VUE GENERALE -->
+<div id="vue-generale" class="section active">
+  <div class="card"><div class="card-title">Croissance cumulée du CA et marge – 2025 vs 2024</div><canvas id="cumChart" style="height:300px"></canvas><p class="note">CA 2025 en forte progression par rapport à 2024, progression marge moins nette</p></div>
+</div>
+
+<!-- SEGMENTS -->
+<div id="segments" class="section">
+  <p style="font-size:13px;color:#000;margin-bottom:1rem;">Vue macro par grand segment — comparaison 2024 vs 2025</p>
+  <div class="row2">
+    <div class="card"><div class="card-title">CA par segment 2025 vs 2024</div><div class="chart-wrap" style="height:260px"><canvas id="cs1" role="img" aria-label="CA par segment">CA segments.</canvas></div></div>
+    <div class="card"><div class="card-title">Marge par segment 2025 vs 2024</div><div class="chart-wrap" style="height:260px"><canvas id="cs2" role="img" aria-label="Marge par segment">Marge segments.</canvas></div></div>
+  </div>
+  <div class="row2" style="margin-top:12px">
+    <div class="card"><div class="card-title">Contribution CA 2025 par segment</div><div class="chart-wrap" style="height:240px"><canvas id="cs3" role="img" aria-label="Camembert CA segments">CA segments camembert.</canvas></div></div>
+    <div class="card"><div class="card-title">Contribution marge 2025 par segment</div><div class="chart-wrap" style="height:240px"><canvas id="cs4" role="img" aria-label="Camembert marge segments">Marge segments camembert.</canvas></div></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <div class="card-title">Taux de marge par segment — 2024 vs 2025</div>
+    <div class="chart-wrap" style="height:220px"><canvas id="cs5" role="img" aria-label="Taux de marge par segment">Taux marge segments.</canvas></div>
+  </div>
+  <p class="note" style="margin-top:12px">Segments TABAC, FDJ, SERVICE et PRESSE stable en 2025, légère progression segment AUTRES +0,73% mais baisse sur VAPE -5,57% et CBD -10,88%</p>
+</div>
+
+<!-- FAMILLES -->
+<div id="familles" class="section">
+  <p style="font-size:13px;color:#000;margin-bottom:1rem;">Classification des 41 familles selon leur dynamique de croissance et leur profil de marge</p>
+  <input type="text" id="seg-search" placeholder="Rechercher une famille..." oninput="filterSeg()" style="width:100%;margin-bottom:12px;padding:7px 12px;border:0.5px solid #ccc;border-radius:8px;font-size:13px;background:#fff;color:#1a1a18;">
+  <table class="seg" id="seg-table">
+    <thead><tr><th>Famille</th><th>CA 2025</th><th>Évol. CA</th><th>Marge %</th><th>Écart marge</th><th>Profil</th></tr></thead>
+    <tbody>
+      <tr><td>110 cigarettes</td><td>410 842 €</td><td class="pos">+22,0%</td><td>8,35%</td><td class="pos">+0,10 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>Jeux instantanés</td><td>292 711 €</td><td class="pos">+16,1%</td><td>5,19%</td><td style="color:#999">stable</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>Loto</td><td>208 229 €</td><td class="pos">+33,3%</td><td>5,20%</td><td style="color:#999">stable</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>MONETIQUE 0%</td><td>80 050 €</td><td class="pos">+72,4%</td><td>1,57%</td><td class="pos">+0,02 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>111 tabac à rouler</td><td>65 346 €</td><td class="pos">+25,8%</td><td>8,35%</td><td class="pos">+0,10 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>Publication</td><td>36 476 €</td><td class="pos">+9,5%</td><td>13,02%</td><td class="pos">+0,03 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>113 cigarillos - cigares</td><td>25 734 €</td><td class="pos">+58,1%</td><td>8,37%</td><td class="pos">+0,10 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>712 magnet</td><td>21 679 €</td><td class="pos">+10,0%</td><td>41,72%</td><td style="color:#999">stable</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>212 e-recharge cig élec</td><td>16 721 €</td><td class="pos">+78,7%</td><td>18,60%</td><td class="neg">−6,60 pt</td><td><span class="badge badge-warn">Forte croissance / Attention marge</span></td></tr>
+      <tr><td>112 tabac pot</td><td>16 345 €</td><td class="pos">+71,9%</td><td>8,36%</td><td class="pos">+0,11 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>841 timbres</td><td>15 747 €</td><td class="pos">+8,1%</td><td>4,00%</td><td class="pos">+0,01 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>121 papier tube filtres</td><td>13 779 €</td><td class="pos">+32,0%</td><td>55,41%</td><td class="pos">+1,80 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>e-Timbres</td><td>12 772 €</td><td class="neg">−19,9%</td><td>0,00%</td><td style="color:#999">—</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>Quotidien</td><td>10 977 €</td><td class="pos">+2,9%</td><td>13,01%</td><td class="neg">−0,02 pt</td><td><span class="badge badge-warn">Croissance / Attention marge</span></td></tr>
+      <tr><td>821 téléphonie 20%</td><td>8 568 €</td><td class="pos">+16,7%</td><td>6,44%</td><td class="neg">−1,08 pt</td><td><span class="badge badge-warn">Croissance / Attention marge</span></td></tr>
+      <tr><td>E-BUSINESS 0%</td><td>8 449 €</td><td class="pos">+42,1%</td><td>2,43%</td><td class="neg">−0,51 pt</td><td><span class="badge badge-warn">Croissance / Attention marge</span></td></tr>
+      <tr><td>213 e-liquide</td><td>6 935 €</td><td class="pos">+59,9%</td><td>48,87%</td><td class="pos">+2,44 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>711 carterie</td><td>6 574 €</td><td class="pos">+1,3%</td><td>53,18%</td><td class="pos">+0,28 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>822 téléphonie pack &amp; sim</td><td>6 347 €</td><td class="pos">+66,5%</td><td>24,91%</td><td class="neg">−1,87 pt</td><td><span class="badge badge-warn">Forte croissance / Attention marge</span></td></tr>
+      <tr><td>Paiement de proximité</td><td>6 229 €</td><td class="neg">−18,2%</td><td>0,00%</td><td style="color:#999">—</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>211 e-cigarettes</td><td>6 029 €</td><td class="neg">−29,1%</td><td>28,36%</td><td class="neg">−6,95 pt</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>741 lavandes</td><td>5 599 €</td><td class="neg">−8,3%</td><td>46,66%</td><td class="pos">+1,83 pt</td><td><span class="badge badge-warn">Attention CA</span></td></tr>
+      <tr><td>122 Briquets</td><td>4 837 €</td><td class="neg">−1,9%</td><td>44,48%</td><td class="pos">+0,58 pt</td><td><span class="badge badge-warn">Attention CA</span></td></tr>
+      <tr><td>116 sachet nicotine</td><td>3 597 €</td><td class="pos">+90,2%</td><td>6,18%</td><td class="neg">−7,72 pt</td><td><span class="badge badge-warn">Forte croissance / Attention marge</span></td></tr>
+      <tr><td>732 cadeaux</td><td>3 425 €</td><td class="pos">+4,1%</td><td>42,55%</td><td class="neg">−0,56 pt</td><td><span class="badge badge-warn">Croissance / Attention marge</span></td></tr>
+      <tr><td>311 fleurs et résines</td><td>3 412 €</td><td class="pos">+126,4%</td><td>28,23%</td><td class="neg">−12,77 pt</td><td><span class="badge badge-warn">Forte croissance / Attention marge</span></td></tr>
+      <tr><td>115 tabac à chauffer</td><td>3 276 €</td><td class="pos">+16,9%</td><td>8,35%</td><td class="pos">+0,11 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>Articles divers logista 20%</td><td>2 568 €</td><td class="neg">−2,1%</td><td>0,00%</td><td style="color:#999">—</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>611 confiserie 20%</td><td>2 360 €</td><td class="pos">+20,2%</td><td>40,81%</td><td class="pos">+0,89 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>515 divers hors presse</td><td>1 556 €</td><td class="pos">+39,2%</td><td>13,56%</td><td class="pos">+9,34 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>123 accessoires fumeur</td><td>967 €</td><td class="pos">+32,5%</td><td>45,07%</td><td class="pos">+3,69 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>621 papeterie</td><td>614 €</td><td class="pos">+64,5%</td><td>53,89%</td><td class="pos">+0,86 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>321 poppers</td><td>548 €</td><td class="pos">+25,8%</td><td>34,13%</td><td class="neg">−0,14 pt</td><td><span class="badge badge-warn">Croissance / Attention marge</span></td></tr>
+      <tr><td>622 piles</td><td>451 €</td><td class="pos">+21,8%</td><td>59,88%</td><td class="pos">+0,21 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>814 carte monétique 0%</td><td>450 €</td><td class="neg">−8,3%</td><td>0,00%</td><td style="color:#999">—</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>311 pre roll</td><td>341 €</td><td class="neg">−25,5%</td><td>41,12%</td><td class="pos">+3,22 pt</td><td><span class="badge badge-warn">Attention CA</span></td></tr>
+      <tr><td>714 guides et plan</td><td>262 €</td><td class="pos">+18,8%</td><td>22,84%</td><td class="pos">+0,23 pt</td><td><span class="badge badge-star">Croissance</span></td></tr>
+      <tr><td>612 confiserie 5,5%</td><td>184 €</td><td class="neg">−15,8%</td><td>50,53%</td><td class="neg">−0,52 pt</td><td><span class="badge badge-risk">Baisse</span></td></tr>
+      <tr><td>713 cartes routières</td><td>149 €</td><td class="pos">+73,2%</td><td>29,49%</td><td class="pos">+5,02 pt</td><td><span class="badge badge-star">Forte croissance</span></td></tr>
+      <tr><td>613 boisson</td><td>0 €</td><td class="neg">−100%</td><td>—</td><td>—</td><td><span class="badge badge-risk">Arrêt</span></td></tr>
+      <tr><td>861 photocopie</td><td>0 €</td><td class="neg">−100%</td><td>—</td><td>—</td><td><span class="badge badge-risk">Arrêt</span></td></tr>
+    </tbody>
+  </table>
+    <div class="leg-seg">
+    <span><span class="badge badge-star">Croissance / Forte croissance</span> Croissance CA (+10% à +50%) / Forte croissance (&gt;+50%)</span>
+    <span><span class="badge badge-warn">Attention CA</span> Baisse CA, hausse de la marge</span>
+    <span><span class="badge badge-warn">Attention marge</span> Baisse de la marge</span>
+    <span><span class="badge badge-risk">Baisse / Arrêt</span> Baisse ou arrêt de l'activité</span>
+  </div>
+</div>
+
+<!-- MATRICE -->
+<div id="matrice" class="section">
+  <p style="font-size:13px;color:#000;margin-bottom:10px;">Chaque bulle = une famille. Axe X = CA 2025, axe Y = taux de marge. Survolez pour les détails</p>
+  <div class="chart-wrap" style="height:400px"><canvas id="c7" role="img" aria-label="Matrice CA vs marge">Positionnement des familles.</canvas></div>
+  <p class="note">Haut-droite = familles idéales (fort CA + forte marge). Bas-droite = familles porteuses CA (fort CA, marge contrainte). Haut-gauche = niches à fort potentiel</p>
+</div>
+
+<!-- TOP FLOP -->
+<div id="top-flop" class="section">
+  <div class="row2">
+    <div class="card"><div class="card-title">Top 5 croissance CA</div><div class="chart-wrap" style="height:220px"><canvas id="c3" role="img" aria-label="Top 5 CA">Top 5 CA</canvas></div></div>
+    <div class="card"><div class="card-title">Flop 5 CA</div><div class="chart-wrap" style="height:220px"><canvas id="c4" role="img" aria-label="Flop 5 CA">Flop 5 CA.</canvas></div></div>
+  </div>
+  <div class="row2" style="margin-top:12px">
+    <div class="card"><div class="card-title">Top 5 croissance marge</div><div class="chart-wrap" style="height:220px"><canvas id="c5" role="img" aria-label="Top 5 marge">Top 5 marge</canvas></div></div>
+    <div class="card"><div class="card-title">Flop 5 marge</div><div class="chart-wrap" style="height:220px"><canvas id="c6" role="img" aria-label="Flop 5 marge">Flop 5 marge</canvas></div></div>
+  </div>
+  <p style="margin-top:1rem;font-size:12px;color:#000;">Le Top 5 représente 84,3% de la croissance totale du CA. Le Flop 5 impacte de −3,2% la croissance du CA total</p>
+</div>
+
+<!-- CONTRIBUTION -->
+<div id="contribution" class="section">
+  <p style="font-size:13px;color:#000;margin-bottom:1rem;">Analyse du risque de dépendance aux familles principales</p>
+  <div class="row2">
+    <div class="card"><div class="card-title">Contribution CA 2025</div><div class="chart-wrap" style="height:240px"><canvas id="c8" role="img" aria-label="Camembert CA">Répartition CA</canvas></div></div>
+    <div class="card"><div class="card-title">Contribution marge 2025</div><div class="chart-wrap" style="height:240px"><canvas id="c9" role="img" aria-label="Camembert marge">Répartition marge</canvas></div></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="card-title">Part cumulée du CA — top familles</div>
+    <div class="risk-bar-wrap"><div class="risk-label"><span>110 cigarettes</span><span>31,3%</span></div><div class="risk-bar"><div class="risk-fill" style="width:31.3%;background:#3266ad"></div></div></div>
+    <div class="risk-bar-wrap"><div class="risk-label"><span>+ Jeux instantanés</span><span>53,7%</span></div><div class="risk-bar"><div class="risk-fill" style="width:53.7%;background:#5585c4"></div></div></div>
+    <div class="risk-bar-wrap"><div class="risk-label"><span>+ Loto</span><span>69,5%</span></div><div class="risk-bar"><div class="risk-fill" style="width:69.5%;background:#7aa3d4"></div></div></div>
+    <div class="risk-bar-wrap"><div class="risk-label"><span>+ MONETIQUE 0%</span><span>75,6%</span></div><div class="risk-bar"><div class="risk-fill" style="width:75.6%;background:#9dc1e3"></div></div></div>
+    <div class="risk-bar-wrap"><div class="risk-label"><span>+ 111 TAR</span><span>80,6%</span></div><div class="risk-bar"><div class="risk-fill" style="width:80.6%;background:#c0daf1"></div></div></div>
+    <div class="alert">5 familles sur 41 génèrent 80,6% du CA total — risque de concentration élevé.</div>
+  </div>
+</div>
+
+<!-- SAISONNALITE -->
+<div id="saisonnalite" class="section">
+  <p style="font-size:13px;color:#000;margin-bottom:1rem;">Répartition du CA mensuel — comparaison 2024 vs 2025 et identification des pics d'activité</p>
+  <div class="leg">
+    <span><span class="leg-dot" style="background:#3266ad"></span>CA 2025</span>
+    <span><span class="leg-dot" style="background:#8ab4e8"></span>CA 2024</span>
+  </div>
+  <div class="chart-wrap" style="height:300px"><canvas id="cm1" role="img" aria-label="CA mensuel comparé">CA mensuel 2024 vs 2025</canvas></div>
+  <div class="row2" style="margin-top:16px">
+    <div class="card">
+      <div class="card-title">Part mensuelle du CA 2025 (%)</div>
+      <div class="chart-wrap" style="height:220px"><canvas id="cm2" role="img" aria-label="Part mensuelle CA 2025">Poids de chaque mois</canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Classement des mois par CA 2025</div>
+      <table style="width:100%;font-size:12px;border-collapse:collapse">
+        <thead><tr>
+          <th style="text-align:left;padding:5px 8px;color:#666;border-bottom:0.5px solid #ddd">Rang</th>
+          <th style="text-align:left;padding:5px 8px;color:#666;border-bottom:0.5px solid #ddd">Mois</th>
+          <th style="text-align:right;padding:5px 8px;color:#666;border-bottom:0.5px solid #ddd">CA 2025</th>
+          <th style="text-align:right;padding:5px 8px;color:#666;border-bottom:0.5px solid #ddd">%</th>
+        </tr></thead>
+        <tbody>
+          <tr style="background:#EAF3DE"><td style="padding:5px 8px">1</td><td style="padding:5px 8px">Juillet</td><td style="padding:5px 8px;text-align:right">152 059 €</td><td style="padding:5px 8px;text-align:right;color:#1D9E75">11,60%</td></tr>
+          <tr><td style="padding:5px 8px">2</td><td style="padding:5px 8px">Août</td><td style="padding:5px 8px;text-align:right">117 192 €</td><td style="padding:5px 8px;text-align:right">8,94%</td></tr>
+          <tr><td style="padding:5px 8px">3</td><td style="padding:5px 8px">Décembre</td><td style="padding:5px 8px;text-align:right">113 573 €</td><td style="padding:5px 8px;text-align:right">8,66%</td></tr>
+          <tr><td style="padding:5px 8px">4</td><td style="padding:5px 8px">Mai</td><td style="padding:5px 8px;text-align:right">112 426 €</td><td style="padding:5px 8px;text-align:right">8,57%</td></tr>
+          <tr><td style="padding:5px 8px">5</td><td style="padding:5px 8px">Septembre</td><td style="padding:5px 8px;text-align:right">111 692 €</td><td style="padding:5px 8px;text-align:right">8,52%</td></tr>
+          <tr><td style="padding:5px 8px">6</td><td style="padding:5px 8px">Octobre</td><td style="padding:5px 8px;text-align:right">109 071 €</td><td style="padding:5px 8px;text-align:right">8,32%</td></tr>
+          <tr><td style="padding:5px 8px">7</td><td style="padding:5px 8px">Juin</td><td style="padding:5px 8px;text-align:right">106 574 €</td><td style="padding:5px 8px;text-align:right">8,13%</td></tr>
+          <tr><td style="padding:5px 8px">8</td><td style="padding:5px 8px">Mars</td><td style="padding:5px 8px;text-align:right">105 993 €</td><td style="padding:5px 8px;text-align:right">8,08%</td></tr>
+          <tr><td style="padding:5px 8px">9</td><td style="padding:5px 8px">Février</td><td style="padding:5px 8px;text-align:right">97 581 €</td><td style="padding:5px 8px;text-align:right">7,44%</td></tr>
+          <tr><td style="padding:5px 8px">10</td><td style="padding:5px 8px">Avril</td><td style="padding:5px 8px;text-align:right">96 628 €</td><td style="padding:5px 8px;text-align:right">7,37%</td></tr>
+          <tr><td style="padding:5px 8px">11</td><td style="padding:5px 8px">Janvier</td><td style="padding:5px 8px;text-align:right">94 685 €</td><td style="padding:5px 8px;text-align:right">7,22%</td></tr>
+          <tr style="background:#FCEBEB"><td style="padding:5px 8px">12</td><td style="padding:5px 8px">Novembre</td><td style="padding:5px 8px;text-align:right">93 664 €</td><td style="padding:5px 8px;text-align:right;color:#D85A30">7,14%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="note" style="margin-top:12px">Juillet est le mois le plus fort (+29% vs la moyenne mensuelle). La saison estivale (juil-août) + fin d'année (déc) représentent les 3 pics principaux. Novembre est le mois le plus faible de 2025</p>
+</div>
+
+<!--RECOMMANDATIONS-->
+<div id="recommandations" class="section">
+  <div class="card">
+
+    <div class="card-title">Recommandations stratégiques</div>
+
+    <div font-size:15px></div>
+      <h4>Objectif : améliorer la rentabilité et réduire les risques liés à la concentration du chiffre d’affaires</h4>
+
+
+    <div style="margin-top:1rem">
+
+      <h4>1. Réduire la dépendance au tabac et FDJ</h4>
+      <p style="font-size:13px;color:#444">
+        80,6% du CA est concentré sur 5 familles, ce qui expose le business à un risque élevé
+      </p>
+      <p style="font-size:13px;color:#ee0909">
+        Action : développer des produits complémentaires à plus forte marge (e-liquide, papeterie, cadeaux)
+        <ul style="font-size:13px; color:#ee0909; padding-left:50px; line-height:1.6">
+          <li>Nouvelle gamme de produits e-liquide</li>
+          <li>Intégrer un rayon papeterie</li>
+          <li>Mettre en avant cadeaux souvenir pour la saison estivale et cadeaux familiaux pour décembre (période de Noël)</li>
+        </ul> 
+      </p>
+
+      <h4 style="margin-top:1rem">2. Optimiser la rentabilité</h4>
+      <p style="font-size:13px;color:#444">
+        Certaines familles à forte croissance présentent une baisse de marge (ex : e-recharge cig élec, fleurs et résines)
+      </p>
+      <p style="font-size:13px;color:#ee0909">
+        Action : ajuster les prix ou prioriser les produits à forte marge
+      </p>
+
+      <h4 style="margin-top:1rem">3. Exploiter la saisonnalité</h4>
+      <p style="font-size:13px;color:#444">
+        La saison estivale (juillet-août) et décembre représentent les pics d’activité
+      </p>
+      <p style="font-size:13px;color:#ee0909">
+        Action : anticiper les stocks et renforcer les ventes sur produits à forte marge sur cette période (magnet, carterie, cadeaux)
+      </p>
+
+      <h4 style="margin-top:1rem">4. Surveiller les segments en baisse</h4>
+      <p style="font-size:13px;color:#444">
+        Les segments vape et e-cigarette montrent une baisse significative
+      </p>
+      <p style="font-size:13px;color:#ee0909">
+        Action : analyser la demande et ajuster l’offre
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>Données : Analyse business 2024-2025 — bureau de tabac &amp; activités annexes. Construit avec Chart.js 4.4.1.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const rendered = {};
+
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.db-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  renderCharts(id);
+}
+
+function fmt(v) { return Math.round(v/1000) + 'k€'; }
+function fmtE(v) { return (v < 0 ? '−' : '+') + Math.abs(Math.round(v)) + '€'; }
+
+function renderCharts(tab) {
+  if (rendered[tab]) return;
+  rendered[tab] = true;
+
+  if (tab === 'vue-generale') {
+    const mois = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'];
+
+    const cumul2025 = [94685,192265,298258,394885,507311,613885,765944,883136,994828,1103899,1197563,1311135];
+    const cumul2024 = [58894,126729,204182,292285,381234,467486,592472,685691,777814,867156,951442,1057654];
+    const cumulMarge2025 = [8139,16071,25087,34336,45016,54976,69750,81186,91581,101134,108905,118496];
+    const cumulMarge2024 = [4820,10428,17418,25385,34245,42400,55315,65118,74041,82230,89485,98690];
+
+    new Chart(document.getElementById('cumChart'), {
+      type: 'line',
+      data: { labels: mois, datasets: [
+        { label: 'CA 2025',    data: cumul2025,     borderColor: '#3266ad', backgroundColor: 'transparent', tension: 0.3, yAxisID: 'yCA' },
+        { label: 'CA 2024',    data: cumul2024,     borderColor: '#8ab4e8', backgroundColor: 'transparent', tension: 0.3, borderDash: [5,4], yAxisID: 'yCA' },
+        { label: 'Marge 2025', data: cumulMarge2025, borderColor: '#1D9E75', backgroundColor: 'transparent', tension: 0.3, yAxisID: 'yMarge' },
+        { label: 'Marge 2024', data: cumulMarge2024, borderColor: '#9FE1CB', backgroundColor: 'transparent', tension: 0.3, borderDash: [5,4], yAxisID: 'yMarge' }
+      ]},
+      options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } },
+        scales: {
+          yCA:    { type: 'linear', position: 'left',  ticks: { callback: function(v){ return Math.round(v/1000)+'k€'; } }, title: { display: true, text: 'CA cumulé', font: { size: 11 } } },
+          yMarge: { type: 'linear', position: 'right', ticks: { callback: function(v){ return Math.round(v/1000)+'k€'; } }, title: { display: true, text: 'Marge cumulée', font: { size: 11 } }, grid: { drawOnChartArea: false } }
+        }
+      }
+    });
+  }  
+
+  if (tab === 'top-flop') {
+    new Chart(document.getElementById('c3'), {
+      type: 'bar',
+      data: { labels: ['110 cig.','Loto','Jeux inst.','MONETIQUE','111 TAR'], datasets: [{ data: [74116,52023,40485,33621,13393], backgroundColor: '#3266ad' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return fmt(v); } } } } }
+    });
+    new Chart(document.getElementById('c4'), {
+      type: 'bar',
+      data: { labels: ['e-Timbres','211 e-cig','Paiement prox.','613 boisson','741 lavandes'], datasets: [{ data: [-3184,-2473,-1388,-669,-508], backgroundColor: '#D85A30' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return fmt(v); } } } } }
+    });
+    new Chart(document.getElementById('c5'), {
+      type: 'bar',
+      data: { labels: ['110 cig.','Loto','Jeux inst.','121 papier','213 e-liq.'], datasets: [{ data: [6526,2704,2124,2040,1376], backgroundColor: '#1D9E75' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return fmtE(v); } } } } }
+    });
+    new Chart(document.getElementById('c6'), {
+      type: 'bar',
+      data: { labels: ['211 e-cig','613 boisson','741 lavandes','116 sachet nic.','311 pre roll'], datasets: [{ data: [-1293,-432,-125,-41,-33], backgroundColor: '#D85A30' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return fmtE(v); } } } } }
+    });
+  }
+  
+  if (tab === 'matrice') {
+    var pts = [
+      {x:410842,y:8.35,r:21,label:'110 cigarettes'},{x:292711,y:5.19,r:17,label:'Jeux instantanés'},
+      {x:208229,y:5.20,r:14,label:'Loto'},{x:80050,y:1.57,r:10,label:'MONETIQUE'},
+      {x:65346,y:8.35,r:8,label:'111 TAR'},{x:36476,y:13.02,r:6,label:'Publication'},
+      {x:25734,y:8.37,r:4,label:'113 cigarillos'},{x:21679,y:41.72,r:4,label:'712 magnet'},
+      {x:16721,y:18.60,r:4,label:'212 e-rech.'},{x:16345,y:8.36,r:4,label:'112 tabac pot'},
+      {x:15747,y:4.00,r:4,label:'841 timbres'},{x:13779,y:55.41,r:3,label:'121 papier tube flitres'},
+      {x:12772,y:0.00,r:3,label:'e-Timbres'},{x:10977,y:13.01,r:3,label:'Quotidien'},
+      {x:8568,y:6.44,r:2,label:'821 telephonie 20%'},{x:8449,y:2.43,r:2,label:'E-BUSINESS 0%'},
+      {x:6935,y:48.87,r:2,label:'213 e liquide'},{x:6574,y:53.18,r:2,label:'711 carterie'},
+      {x:6347,y:24.91,r:2,label:'822 telephonie pack et sim'},{x:6229,y:0.00,r:2,label:'Paiement de proximité'},
+      {x:6029,y:28.36,r:2,label:'211 e cigarettes'},{x:5599,y:46.66,r:2,label:'741 lavandes'},
+      {x:4837,y:44.48,r:2,label:'122 Briquets'},{x:3597,y:6.18,r:2,label:'116 sachet nicotine'},
+      {x:3425,y:42.55,r:2,label:'732 cadeaux'},{x:3412,y:28.23,r:2,label:'311 fleurs et résines'},
+      {x:3276,y:8.35,r:2,label:'115 tabac à chauffer'},{x:2568,y:0.00,r:1,label:'Articles divers logista 20%'},
+      {x:2360,y:40.81,r:1,label:'611 confiserie 20%'},{x:1556,y:13.56,r:1,label:'515 divers hors presse'},
+      {x:967,y:45.07,r:1,label:'123 accessoires fumeur'},{x:614,y:53.89,r:1,label:'621 papeterie'},
+      {x:548,y:34.13,r:1,label:'321 poppers'},{x:451,y:59.88,r:1,label:'622 piles'},
+      {x:450,y:0.00,r:1,label:'814 carte monetique 0%'},{x:341,y:41.12,r:1,label:'311 pre roll'},
+      {x:262,y:22.84,r:1,label:'714 guides et plan'},{x:184,y:50.53,r:1,label:'612 confiserie 5,5%'},
+      {x:149,y:29.49,r:1,label:'713 cartes routières'}
+    ];
+    new Chart(document.getElementById('c7'), {
+      type: 'bubble',
+      data: { datasets: [{ data: pts.map(function(p){ return {x:p.x,y:p.y,r:p.r,label:p.label}; }), backgroundColor: 'rgba(50,102,173,0.5)', borderColor: '#3266ad' }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx){ var d=ctx.raw; return d.label+' — CA : '+Math.round(d.x/1000)+'k€, Marge : '+d.y+'%'; } } } },
+        scales: {
+          x: { title: { display: true, text: 'CA 2025 (€)', font: { size: 11 } }, ticks: { callback: function(v){ return Math.round(v/1000)+'k€'; } }, min: -5000, max: 440000 },
+          y: { title: { display: true, text: 'Taux de marge %', font: { size: 11 } }, min: 0, max: 65 }
+        }
+      }
+    });
+  }
+
+  if (tab === 'contribution') {
+    var cols = ['#3266ad','#5585c4','#7aa3d4','#9dc1e3','#c0daf1','#d0d0d0'];
+    var pie_labels = ['110 cigarettes','Jeux inst.','Loto','MONETIQUE','111 TAR','Autres (36 familles)'];
+    new Chart(document.getElementById('c8'), {
+      type: 'doughnut',
+      data: { labels: pie_labels, datasets: [{ data: [31.33,22.33,15.88,6.11,4.98,19.37], backgroundColor: cols }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10 } } } }
+    });
+    new Chart(document.getElementById('c9'), {
+      type: 'doughnut',
+      data: { labels: pie_labels, datasets: [{ data: [28.95,12.82,9.14,1.06,4.61,43.42], backgroundColor: cols }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 10 } } } }
+    });
+  }
+
+  if (tab === 'segments') {
+    var segLabels = ['TABAC','FDJ','SERVICE','PRESSE','AUTRES','VAPE','CBD'];
+    var segCols = ['#3266ad','#e07b39','#1D9E75','#9b59b6','#e2b714','#e74c3c','#2ecc71'];
+    new Chart(document.getElementById('cs1'), {
+      type: 'bar',
+      data: { labels: segLabels, datasets: [
+        { label: 'CA 2025', data: [525140,500940,141179,47453,62986,29686,3733], backgroundColor: '#3266ad' },
+        { label: 'CA 2024', data: [419160,408431,104787,43966,57151,22194,1965], backgroundColor: '#8ab4e8' }
+      ]},
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } } }, scales: { y: { ticks: { callback: function(v){ return fmt(v); } } } } }
+    });
+    new Chart(document.getElementById('cs2'), {
+      type: 'bar',
+      data: { labels: segLabels, datasets: [
+        { label: 'Marge 2025', data: [43777,26014,4222,6178,28992,8209,1103], backgroundColor: '#1D9E75' },
+        { label: 'Marge 2024', data: [34687,21186,3049,5715,25888,7373,791], backgroundColor: '#9FE1CB' }
+      ]},
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } } }, scales: { y: { ticks: { callback: function(v){ return fmt(v); } } } } }
+    });
+    new Chart(document.getElementById('cs3'), {
+      type: 'doughnut',
+      data: { labels: segLabels, datasets: [{ data: [40.05,38.21,10.77,3.62,4.80,2.26,0.29], backgroundColor: segCols }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } } }
+    });
+    new Chart(document.getElementById('cs4'), {
+      type: 'doughnut',
+      data: { labels: segLabels, datasets: [{ data: [36.94,21.95,3.56,5.22,24.47,6.93,0.93], backgroundColor: segCols }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } } }
+    });
+    new Chart(document.getElementById('cs5'), {
+      type: 'bar',
+      data: { labels: segLabels, datasets: [
+        { label: '% Marge 2025', data: [8.34,5.19,2.99,13.02,46.03,27.65,29.40], backgroundColor: '#3266ad' },
+        { label: '% Marge 2024', data: [8.28,5.19,2.91,13.00,45.30,33.22,40.28], backgroundColor: '#8ab4e8' }
+      ]},
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } } }, scales: { y: { ticks: { callback: function(v){ return v+'%'; } } } } }
+    });
+  }
+
+  if (tab === 'saisonnalite') {
+    var mois = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'];
+    var ca25 = [94685,97581,105993,96628,112426,106574,152059,117192,111692,109071,93664,113573];
+    var ca24 = [58895,67835,77453,88102,88950,86251,124986,93219,92123,89342,84286,106212];
+    new Chart(document.getElementById('cm1'), {
+      type: 'bar',
+      data: { labels: mois, datasets: [
+        { label: 'CA 2025', data: ca25, backgroundColor: '#3266ad' },
+        { label: 'CA 2024', data: ca24, backgroundColor: '#8ab4e8' }
+      ]},
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return fmt(v); } } } } }
+    });
+    var total25 = ca25.reduce(function(a,b){ return a+b; }, 0);
+    var maxCA = Math.max.apply(null, ca25);
+    var minCA = Math.min.apply(null, ca25);
+    new Chart(document.getElementById('cm2'), {
+      type: 'bar',
+      data: { labels: mois, datasets: [{ label: '% du CA annuel', data: ca25.map(function(v){ return parseFloat(((v/total25)*100).toFixed(2)); }), backgroundColor: ca25.map(function(v){ return v === maxCA ? '#1D9E75' : v === minCA ? '#D85A30' : '#3266ad'; }) }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: function(v){ return v+'%'; } } } } }
+    });
+  }
+}
+
+function filterSeg() {
+  var q = document.getElementById('seg-search').value.toLowerCase();
+  document.querySelectorAll('#seg-table tbody tr').forEach(function(row) {
+    row.style.display = row.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+  });
+}
+
+renderCharts('vue-generale');
+</script>
+</body>
+</html>
