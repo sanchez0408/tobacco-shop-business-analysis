@@ -127,8 +127,8 @@ Several high-growth families show significant margin erosion:
 
 ## 👤 About
 
-Built by **Guillaume** as part of a data analytics portfolio project.
-Transitioning into data analytics with a background in management and operations.
+Built by **Guillaume** as part of a data analytics portfolio project
+Transitioning into data analytics with a background in management and operations
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](www.linkedin.com/in/guillaume-sanchez-124839337)
 
@@ -138,20 +138,20 @@ Transitioning into data analytics with a background in management and operations
 
 # 🏪 Análisis de Rendimiento de Negocio 2024 → 2025
 
-> **Dashboard interactivo** que analiza el CA, el margen, la estacionalidad y la segmentación de familias de productos de un estanco con actividades complementarias (CBD, vape, lotería, prensa, servicios).
+> **Dashboard interactivo** que analiza el CA, el margen, la estacionalidad y la segmentación de familias de productos de un estanco con actividades complementarias (CBD, vape, lotería, prensa, servicios)
 
 ---
 
 ## 🎯 Descripción del proyecto
 
-Este proyecto es un análisis completo de un estanco francés real, comparando los ejercicios **2024 y 2025** en **41 familias de productos** y **7 segmentos de negocio**. Fue desarrollado como parte de un portfolio de análisis de datos para demostrar competencias analíticas de principio a fin — desde los datos brutos hasta los insights de negocio.
+Este proyecto es un análisis completo de un estanco francés real, comparando los ejercicios **2024 y 2025** en **41 familias de productos** y **7 segmentos de negocio**. Fue desarrollado como parte de un portfolio de análisis de datos para demostrar competencias analíticas de principio a fin — desde los datos brutos hasta los insights de negocio
 
 ---
 
 ## 🔍 Metodología
 
 ### 1. Recopilación de datos
-Datos de ventas extraídos del sistema de punto de venta, organizados por familia de productos y mes para 2024 y 2025.
+Datos de ventas extraídos del sistema de punto de venta, organizados por familia de productos y mes para 2024 y 2025
 
 ### 2. Procesamiento
 - Agregación por familia de productos (41 familias) y segmento (7 segmentos)
