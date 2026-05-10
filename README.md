@@ -1,6 +1,6 @@
 # 🏪 Tobacco Shop — Business Performance Analysis 2024 → 2025
 
-> **Interactive business dashboard** analyzing revenue, margin, seasonality and product family segmentation for a tobacco shop with ancillary activities (CBD, vape, lottery, press, services).
+> **Interactive business dashboard** analyzing revenue, margin, seasonality and product family segmentation for a tobacco shop with ancillary activities (CBD, vape, lottery, press, services)
 
 ---
 
@@ -18,14 +18,14 @@
 
 This project is a complete business analysis of a real French tobacco shop, comparing fiscal years **2024 and 2025** across **41 product families** and **7 business segments**. It was built as part of a data analytics portfolio to demonstrate end-to-end analytical skills — from raw data to actionable business insights.
 
-**Business context:** The shop operates in a regulated environment (tobacco, lottery, services) with ancillary growth segments (vape, CBD). The challenge is to identify which product families drive profitability, where margin is eroding despite revenue growth, and how to reduce concentration risk.
+**Business context:** The shop operates in a regulated environment (tobacco, lottery, services) with ancillary growth segments (vape, CBD). The challenge is to identify which product families drive profitability, where margin is eroding despite revenue growth, and how to reduce concentration risk
 
 ---
 
 ## 🔍 Methodology
 
 ### 1. Data Collection
-Raw sales data extracted from the point-of-sale system, organized by product family and month for both 2024 and 2025.
+Raw sales data extracted from the point-of-sale system, organized by product family and month for both 2024 and 2025
 
 ### 2. Data Processing
 - Aggregation by product family (41 families) and segment (7 segments: TOBACCO, LOTTERY, SERVICE, PRESS, OTHERS, VAPE, CBD)
@@ -44,7 +44,7 @@ Five analytical dimensions were explored:
 | **Seasonality** | Monthly revenue patterns and peak identification |
 
 ### 4. Visualization
-Built with **Chart.js 4.4.1** — pure HTML/CSS/JS, no framework, no backend. Fully portable and runs in any browser.
+Built with **Chart.js 4.4.1** — pure HTML/CSS/JS, no framework, no backend. Fully portable and runs in any browser
 
 ---
 
@@ -98,8 +98,8 @@ Flowers and resins CBD and e-cigarette refills are experiencing rapid growth, bu
 **3. Leverage seasonality**
 Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks
 
-**4. Monitor declining families**
-E-cigarettes (−29.1%) is in structural decline — 
+**4. Monitoring of high-margin families in decline**
+The e-cigarette market (-29.1%) is in structural decline, but with some growth in refills (+78,73%)
 
 ---
 
@@ -117,10 +117,10 @@ E-cigarettes (−29.1%) is in structural decline —
 
 ```
 📦 tobacco-shop-business-analysis
+ ┣ 📄 README.md 
  ┣ 📊 dashboard_business_2025_en.html   # English version
  ┣ 📊 dashboard_business_2025_es.html   # Spanish version
- ┣ 📊 dashboard_business_2025_fr.html   # French version
- ┗ 📄 README.md                          # This file
+ ┗ 📊 dashboard_business_2025_fr.html   # French version
 ```
 
 ---
@@ -130,7 +130,7 @@ E-cigarettes (−29.1%) is in structural decline —
 Built by **Guillaume** as part of a data analytics portfolio project.
 Transitioning into data analytics with a background in management and operations.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/yourprofile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](www.linkedin.com/in/guillaume-sanchez-124839337)
 
 ---
 
@@ -190,5 +190,3 @@ Datos de ventas extraídos del sistema de punto de venta, organizados por famili
 - **Disponible en:** 🇬🇧 Inglés · 🇪🇸 Español · 🇫🇷 Francés
 
 ---
-
-*Desarrollado por **Guillaume** como proyecto de portfolio de análisis de datos.*
