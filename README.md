@@ -81,7 +81,7 @@ Several high-growth families show significant margin erosion:
 | E-cigarettes refills | +78.7% | −6.60 pt |
 
 ### Seasonality
-- **July** is the strongest month at 11.60% of annual revenue (+29% vs monthly average)
+- **July** is the strongest month at 11.60% of annual revenue (+39% vs monthly average)
 - **Summer peak** (July-August) + **year-end** (December) are the 3 main activity peaks
 - **November** is the weakest month in 2025
 
@@ -177,7 +177,7 @@ Datos de ventas extraídos del sistema de punto de venta, organizados por famili
 - **Tasa de margen ligeramente a la baja** al 9,04% vs 9,33%
 - **5 familias de 41 generan el 80,6% del CA total** — riesgo de concentración elevado
 - **Julio** es el mes más fuerte con el 11,60% del CA anual
-- Familias con fuerte crecimiento pero presión de margen: CBD flores y resinas (+126,4%, −12,77 pt), Recarga cigarillos elec (+78,7%, −6,60 pt)
+- **Familias con fuerte crecimiento** pero presión de margen: CBD flores y resinas (+126,4%, −12,77 pt), Recarga cigarillos elec (+78,7%, −6,60 pt)
 
 ---
 
