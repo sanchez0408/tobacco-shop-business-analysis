@@ -130,7 +130,7 @@ Several high-growth families show significant margin erosion:
 Built by **Guillaume** as part of a data analytics portfolio project
 Transitioning into data analytics with a background in management and operations
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](www.linkedin.com/in/guillaume-sanchez-124839337)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/guillaume-sanchez-124839337)
 
 ---
 
