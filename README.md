@@ -192,6 +192,6 @@ Datos de ventas extraídos del sistema de punto de venta, organizados por famili
 
 ## 👤 Acerca del proyecto
 
-Desarrollado como parte de una transición profesional hacia el análisis de datos, con experiencia previa en gestión y administración
+Desarrollado como parte de una transición profesional hacia el análisis de datos, con experiencia previa en gestión y operación
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/guillaume-sanchez-124839337)
