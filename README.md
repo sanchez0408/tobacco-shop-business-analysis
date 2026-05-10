@@ -127,7 +127,7 @@ Several high-growth families show significant margin erosion:
 
 ## 👤 About
 
-Project designed with the aim of a career change into data analysis after my experience in management and administration
+Built as part of a career transition into data analytics, drawing on a background in management and operations
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/guillaume-sanchez-124839337)
 
@@ -189,3 +189,9 @@ Datos de ventas extraídos del sistema de punto de venta, organizados por famili
 - **Disponible en:** 🇬🇧 Inglés · 🇪🇸 Español · 🇫🇷 Francés
 
 ---
+
+## 👤 Acerca del proyecto
+
+Desarrollado como parte de una transición profesional hacia el análisis de datos, con experiencia previa en gestión y administración
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/guillaume-sanchez-124839337)
