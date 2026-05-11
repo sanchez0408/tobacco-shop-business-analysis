@@ -65,7 +65,7 @@ The top 5 families by revenue growth account for **84.3% of total growth**:
 
 | Family | Revenue growth | Margin rate |
 |---|---|---|
-| 110 Cigarettes | +22.0% | 8.35% |
+| Cigarettes | +22.0% | 8.35% |
 | Loto | +33.3% | 5.20% |
 | Scratch cards | +16.1% | 5.19% |
 | Card payments | +72.4% | 1.57% |
