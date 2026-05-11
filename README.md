@@ -97,26 +97,26 @@ Several high-growth families show significant margin erosion:
 
 **1. Reduce concentration risk**
 **Problem:** 80.6% of revenue depends on 5 families, mostly in regulated markets  
-**Action:** 
+**Action:**  
 - Introduce a second range of e-liquid products
 - To expand the stationery collection: Set up a stationery area (pens, tape, notebooks, glue, etc.)
 - Highlight souvenir gifts for the summer season and family and festive gifts for the end-of-year period 
 
 **2. Protect margin on fast-growing families**
 **Problem:** CBD flowers (−12.77 pt), e-cig refills (−6.60 pt)  
-**Action:** 
+**Action:**  
 - Pricing strategy review
 - introduction of a new product range in line with customer expectations
 
 **3. Leverage seasonality**
 **Problem:** July generates +39% above average : high-margin products may be understocked  
-**Action:** 
+**Action:**  
 - Anticipate stock for summer and December : magnets, greeting cards, gifts, lavender  
 - Install a small refrigerator stocked with cold drinks for the summer season and relaunch the beverage category, which generated a high profit margin (64.60%) in 2024
 
 **4. Monitoring of high-margin families in decline**
-**Problem:** The e-cigarette (-29.1%) and lavender (-8,3%) is in decline
-**Action:** 
+**Problem:** The e-cigarette (-29.1%) and lavender (-8,3%) is in decline  
+**Action:**  
 - Find a new range of electronic cigarettes following consumption trends
 - Check with your lavender supplier about the introduction of a new lavender product
 
