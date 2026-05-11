@@ -106,7 +106,7 @@ Several high-growth families show significant margin erosion:
 **Problem:** CBD flowers (−12.77 pt), e-cig refills (−6.60 pt)  
 **Action:**  
 - Pricing strategy review
-- introduction of a new product range in line with customer expectations
+- Introduction of a new product range in line with customer expectations
 
 **3. Leverage seasonality**  
 **Problem:** July generates +39% above average : high-margin products may be understocked  
