@@ -80,6 +80,12 @@ Several high-growth families show significant margin erosion:
 | Nicotine pouches | +90.2% | −7.72 pt |
 | E-cigarettes refills | +78.7% | −6.60 pt |
 
+**Cause:**
+
+- **CBD flowers & resins** : Product range in store with a low turnover rate; price reductions were implemented during 2025 in order to clear stock
+- **Nicotine pouches** : Stock clearance during the year with price reduction following the ban on the sale of these products planned for 2026
+- **E-cigarettes & refills** : The main product range (VUSE) regulated for sale represents too large a market share in electronic cigarettes
+
 ### Seasonality
 - **July** is the strongest month at 11.60% of annual revenue (+39% vs monthly average)
 - **Summer peak** (July-August) + **year-end** (December) are the 3 main activity peaks
@@ -90,16 +96,29 @@ Several high-growth families show significant margin erosion:
 ## 💡 Strategic Recommendations
 
 **1. Reduce concentration risk**
-- Develop complementary high-margin product lines (e-liquid, stationery, gifts) to reduce dependency on tobacco and lottery
+**Problem:** 80.6% of revenue depends on 5 families, mostly in regulated markets  
+**Action:** 
+- Introduce a second range of e-liquid products
+- To expand the stationery collection: Set up a stationery area (pens, tape, notebooks, glue, etc.)
+- Highlight souvenir gifts for the summer season and family and festive gifts for the end-of-year period 
 
 **2. Protect margin on fast-growing families**
-- Flowers and resins CBD and e-cigarette refills are experiencing rapid growth, but margins are shrinking: a new pricing strategy, renegotiation with suppliers or the entry of new suppliers are necessary
+**Problem:** CBD flowers (−12.77 pt), e-cig refills (−6.60 pt)  
+**Action:** 
+- Pricing strategy review
+- introduction of a new product range in line with customer expectations
 
 **3. Leverage seasonality**
-- Stock high-margin products (magnets, greeting cards, gifts) ahead of summer and December peaks
+**Problem:** July generates +39% above average : high-margin products may be understocked  
+**Action:** 
+- Anticipate stock for summer and December : magnets, greeting cards, gifts, lavender  
+- Install a small refrigerator stocked with cold drinks for the summer season and relaunch the beverage category, which generated a high profit margin (64.60%) in 2024
 
 **4. Monitoring of high-margin families in decline**
-- The e-cigarette market (-29.1%) is in structural decline, but with some growth in refills (+78,73%)
+**Problem:** The e-cigarette (-29.1%) and lavender (-8,3%) is in decline
+**Action:** 
+- Find a new range of electronic cigarettes following consumption trends
+- Check with your lavender supplier about the introduction of a new lavender product
 
 ---
 
